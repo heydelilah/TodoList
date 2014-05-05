@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>mini todos</title>
+
+	<style>
+
+		body{
+			font-family: Georgia;
+		}
+
+		.btn{
+			display: inline-block;
+			min-height: 30px;
+			padding: 0 12px;
+			border: 0;
+			background: #EEE;
+			line-height: 30px;
+			color: #444;
+			letter-spacing: normal;
+			cursor: pointer;
+		}
+
+		.add{
+			background: #00A8E6;
+			color: #FFF;
+		}
+
+		input[type="text"]{
+			min-width: 211px;
+			height: 20px;
+			max-width: 100%;
+			padding: 4px 6px;
+			border: 1px solid #DDD;
+			background: #FFF;
+			color: #444;
+			-webkit-transition: all linear .2s;
+			transition: all linear .2s;
+		}
+		ul{
+			padding: 0 22px;
+		}
+		li{
+			margin: 5px;
+		}
+		.task{
+			min-width: 200px;
+			display: inline-block;
+		}
+	</style>
+
+</head>
+<body>
+
+	<form id="addTask" action="">
+		<input type="text" placeholder="Your new task">
+		<input type="submit" class="btn add" value="Add Task">
+	</form>
+
+	<div class="tasks">
+		<script  id="taskTemplate" type="text/template">
+			<span class="task"><%= title %></span>
+			<input class="btn edit" type="button" value="edit" />
+			<input class="btn delete" type="button" value="delete" />
+		</script>
+	</div>
+
+	<script src="libs/jquery-1.9.1.min.js"></script>
+	<script src="libs/underscore.js"></script>
+	<script src="libs/backbone.js"></script>
+
+	<script src="todos.js"></script>
+</body>
+</html>
+
